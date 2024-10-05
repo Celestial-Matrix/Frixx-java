@@ -4,5 +4,13 @@
         "**/*.ctxt": true,
         "**/*.bluej": true,
         
-    }
+    },
+    "github.codespaces.defaultExtensions": [
+        "vscjava.vscode-java-pack",
+        "trixnz.go-to-method",
+        "ionutvmi.path-autocomplete",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml"
+    ]
 }
