@@ -1,0 +1,16 @@
+{
+  "name": "My Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "trixnz.go-to-method",
+    "ionutvmi.path-autocomplete",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml"    // Prettier extension
+  ],
+  "postCreateCommand": "pip install -r requirements.txt", // Post-creation steps, e.g., Python dependencies
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  }
+}
