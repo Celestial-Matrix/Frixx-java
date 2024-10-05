@@ -14,3 +14,6 @@ do these instructions when u r working alone.
 11) press commit above the changes drop down menu
 12) press Sync changes.
 13) now u can exit.
+
+
+Note: when u open source control, it may show sync changes button, so press it. then continue from number 6 point
