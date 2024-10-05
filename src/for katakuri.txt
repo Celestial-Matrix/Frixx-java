@@ -1,0 +1,15 @@
+I see you have downloaded this.
+
+do these instructions when u r working alone.
+1) now go to source control located in the bar left side for your screen(or just do ctrl+shift+G).
+2) A expanded sidebar will appear on left of the screen
+3) hover your mouse against the second source control text
+4) You will see three dot horizontal line icon, press it
+5) Select pull, push in the appeared bar, and press sync.
+6) now continue to do your work.
+7) after completion, go to source control again (ctrl + shift + G)
+8) enter empty blank space(not text) in the message text box
+9) see the changes drop down menu below it, hover ur cursor on it
+10) press the "+" icon
+11) press commit above the changes drop down menu
+12)
