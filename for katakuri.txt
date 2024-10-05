@@ -12,4 +12,5 @@ do these instructions when u r working alone.
 9) see the changes drop down menu below it, hover ur cursor on it
 10) press the "+" icon
 11) press commit above the changes drop down menu
-12)
+12) press Sync changes.
+13) now u can exit.
