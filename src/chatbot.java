@@ -13,7 +13,7 @@ public class chatbot
 {
     public static void main(String[] args)
     {
-        InputOutputFrame frame = new InputOutputFrame();
+        new ChatbotWindow();
         Scanner in= new Scanner(System.in);
         System.out.print("Please Enter Password");
         System.out.println();

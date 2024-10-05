@@ -7,7 +7,9 @@
     "ionutvmi.path-autocomplete",
     "esbenp.prettier-vscode",
     "redhat.vscode-xml",
-    "redhat.vscode-yaml"    // Prettier extension
+    "redhat.vscode-yaml",    // Prettier extension
+    "VisualStudioExptTeam.vscodeintellicode-completions",
+    "VisualStudioExptTeam.vscodeintellicode-insiders"
   ],
   "postCreateCommand": "pip install -r requirements.txt", // Post-creation steps, e.g., Python dependencies
   "settings": {
