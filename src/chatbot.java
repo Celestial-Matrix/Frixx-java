@@ -365,16 +365,24 @@ public class chatbot
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                }else if(command.contains("use custom url") || (command.contains("open website") || (command.equalsIgnoreCase("open custom website") || (command.contains("cutom web open") || (command.contains("web") || (command.equalsIgnoreCase("web open")))))))
+                }else if(command.contains("custom url") || command.contains("use custom url") || (command.contains("open website") || (command.equalsIgnoreCase("open custom website") || (command.contains("cutom web open") || (command.contains("web") || (command.equalsIgnoreCase("web open")))))))
                 {
                     while (true) {
                         System.out.println();
                         System.out.println("1 for Enter Custom URL");
                         System.out.println("2 for exit Custom URL mode");
                         System.out.println();
+                        
                         System.out.print("Me: ");
-                        int option = in.nextInt();
-                        in.nextLine();
+                        int option = -1; // Initialize with a default invalid option
+                        try {
+                            option = in.nextInt();
+                            in.nextLine(); // Clear the buffer
+                        } catch (InputMismatchException e) {
+                            System.out.println("Wrong Statement! Enter again");
+                            in.nextLine(); // Clear the buffer for the next input
+                            continue; // Restart the loop
+                        }
 
                         if (option == 1) {
                             System.out.println("1 for WWW protocol");

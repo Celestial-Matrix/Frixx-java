@@ -1,16 +1,18 @@
 package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 public class ChatbotWindow {
     private JFrame frame;
     private JTextArea chatArea;
     private JTextField inputField;
     private JButton sendButton;
+    private PipedOutputStream pipedOut;
 
-    // Constructor that sets up the JFrame and handles input/output
     public ChatbotWindow() {
         // Create the JFrame and components
         frame = new JFrame("Chatbot Console");
@@ -31,19 +33,26 @@ public class ChatbotWindow {
         // Disable chat area editing
         chatArea.setEditable(false);
 
+        try {
+            redirectSystemOutput();
+            redirectSystemInput();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         // Add action listener for the send button
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                processUserInput();
+                processUserCommand();
             }
         });
 
-        // Allow pressing "Enter" in the input field to send the message
+        // Allow pressing "Enter" in the input field to send the command
         inputField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                processUserInput();
+                processUserCommand();
             }
         });
 
@@ -52,36 +61,45 @@ public class ChatbotWindow {
         frame.setVisible(true);
     }
 
-    // Process user input and display it along with the chatbot's response
-    private void processUserInput() {
-        String userInput = inputField.getText().trim();
-        if (!userInput.isEmpty()) {
-            appendChat("You: " + userInput);  // Display the user's input
+    // Process user input as a command and send it to the main class
+    private void processUserCommand() {
+        String command = inputField.getText().trim();
+        if (!command.isEmpty()) {
+            // Print the command to the console for visual feedback
+            System.out.println(command);
 
-            // Get chatbot response (internal logic handled here)
-            String chatbotResponse = handleChatbotResponse(userInput);
-            appendChat("Chatbot: " + chatbotResponse);
+            // Send the command to the piped input stream, simulating console input
+            try {
+                pipedOut.write((command + "\n").getBytes());
+                pipedOut.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-            // Clear input field for next input
+            // Clear the input field after sending the command
             inputField.setText("");
         }
     }
 
-    // Append messages to the chat area
-    private void appendChat(String message) {
-        chatArea.append(message + "\n");
-        chatArea.setCaretPosition(chatArea.getDocument().getLength());  // Scroll to the bottom
+    // Redirects System.out to the JTextArea
+    private void redirectSystemOutput() {
+        PrintStream printStream = new PrintStream(new OutputStream() {
+            @Override
+            public void write(int b) {
+                // Append the output to the chat area (JTextArea)
+                chatArea.append(String.valueOf((char) b));
+                chatArea.setCaretPosition(chatArea.getDocument().getLength());
+            }
+        });
+
+        // Set the new output stream to System.out
+        System.setOut(printStream);
     }
 
-    // Chatbot logic to process user input and return the response
-    private String handleChatbotResponse(String input) {
-        // Example simple chatbot logic (replace with your chatbot logic)
-        if (input.equalsIgnoreCase("hello")) {
-            return "Hello! How can I assist you today?";
-        } else if (input.equalsIgnoreCase("bye")) {
-            return "Goodbye! Have a great day!";
-        } else {
-            return "I'm sorry, I didn't understand that.";
-        }
+    // Redirects System.in using Piped streams to simulate console input
+    private void redirectSystemInput() throws IOException {
+        PipedInputStream pipedIn = new PipedInputStream();
+        pipedOut = new PipedOutputStream(pipedIn);
+        System.setIn(pipedIn); // Set System.in to the piped input stream
     }
 }
