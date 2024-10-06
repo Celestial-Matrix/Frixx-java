@@ -112,7 +112,7 @@ public class chatbot{
                     System.out.print("Switching 2 English.; ");
                 } else if (command.equalsIgnoreCase("talk in chindi")) {
                     System.out.print("Ok, talking in Chindi: kya bidu kaisa re tu?; ");
-                } else if (command.equalsIgnoreCase("mai thik tu bata") || command.equalsIgnoreCase("tu kaisa hai")) {
+                }else if (command.equalsIgnoreCase("mai thik tu bata") || command.equalsIgnoreCase("tu kaisa hai")) {
                     System.out.print("Bas life mast challe ri hai.; ");
                 } else if (command.equalsIgnoreCase("mai thik") || command.equalsIgnoreCase("bindaas") || command.equalsIgnoreCase("bindas")) {
                     System.out.print("Sahi hai!; ");
