@@ -12,7 +12,7 @@ import java.io.File;
 public class chatbot{
 
     private static String getSeparatorLine() {
-        return "_____________________________________________________________________________"; // Adjust length as needed
+        return "______________________________________________________________________________"; // Adjust length as needed
     }
 
     public static void main(String[] args)
