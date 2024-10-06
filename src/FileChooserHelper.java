@@ -5,14 +5,14 @@ import java.io.File;
 
 public class FileChooserHelper {
     // Method to open file chooser
-    public static void openFileChooser(JFrame frame) {
+    public static void openFileChooser(JDialog fileDialog) {
         // Create a JFileChooser
         JFileChooser fileChooser = new JFileChooser();
         // Set the dialog title
         fileChooser.setDialogTitle("Select a file to open");
 
         // Show the file chooser dialog
-        int returnValue = fileChooser.showOpenDialog(frame);
+        int returnValue = fileChooser.showOpenDialog(fileDialog);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             // Get the selected file
             File selectedFile = fileChooser.getSelectedFile();
@@ -21,7 +21,7 @@ public class FileChooserHelper {
                 Desktop.getDesktop().open(selectedFile);
             } catch (Exception ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(frame, "Error opening file: " + ex.getMessage());
+                JOptionPane.showMessageDialog(fileDialog, "Error opening file: " + ex.getMessage());
             }
         }
     }
