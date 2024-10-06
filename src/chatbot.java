@@ -56,19 +56,19 @@ public class chatbot{
                 }
                 count = 2;
                 
-                if (command.equalsIgnoreCase("Hi") || command.equalsIgnoreCase("yo") || command.equalsIgnoreCase("heya") || command.equalsIgnoreCase("hello")) {
+                if (command.toLowerCase().contains("Hi") || command.toLowerCase().contains("yo") || command.toLowerCase().contains("heya") || command.toLowerCase().contains("hello")) {
                     System.out.print("Yo! What's up man?");
-                } else if (command.equalsIgnoreCase("curse words")) {
+                } else if (command.toLowerCase().contains("curse words")) {
                     System.out.print("Dirty Boy cheee!!! ");
                 } else if (command.contains("friend") || command.contains("friends")) {
                     System.out.print("Friends r important; let\'s keep it positive.; ");
-                } else if (command.equalsIgnoreCase("I am fine") || command.equalsIgnoreCase("i am good") || command.equalsIgnoreCase("i am great") || command.equalsIgnoreCase("I\'m fine")) {
+                } else if (command.toLowerCase().contains("I am fine") || command.toLowerCase().contains("i am good") || command.toLowerCase().contains("i am great") || command.toLowerCase().contains("I\'m fine")) {
                     System.out.print("Great 2 hear that!; ");
                 } else if (command.contains("How are you") || command.contains("How r u") || command.contains("how are u")) {
                     System.out.print("I\'m fine, thanks 4 asking!; ");
-                } else if (command.equalsIgnoreCase("what can you do") || command.equalsIgnoreCase("what can u do")) {
+                } else if (command.toLowerCase().contains("what can you do") || command.toLowerCase().contains("what can u do")) {
                     System.out.print("I can assist with various tasks & open websites 4 u.; ");
-                } else if (command.equalsIgnoreCase("what u know") || command.contains("you know")) {
+                } else if (command.toLowerCase().contains("what u know") || command.contains("you know")) {
                     System.out.print("I know how 2 assist with tasks & provide info.; ");
                 } else if (command.contains("aryan")) {
                     System.out.print("Smart person. AIRITO!; ");
@@ -78,37 +78,37 @@ public class chatbot{
                     System.out.print("Bhak noobda, planted tree.; ");
                 } else if (command.contains("zohaib") || command.contains("Rani Zohaiba")) {
                     System.out.print("The best in the world!; ");
-                } else if (command.equalsIgnoreCase("good work")) {
+                } else if (command.toLowerCase().contains("good work")) {
                     System.out.print("Thanks!; ");
-                } else if (command.equalsIgnoreCase("Thanks") || command.equalsIgnoreCase("thank u")) {
+                } else if (command.toLowerCase().contains("Thank")) {
                     System.out.print("U\'re welcome!; ");
-                } else if (command.equalsIgnoreCase("what is your name") || command.equalsIgnoreCase("what\'s your name")) {
+                } else if (command.toLowerCase().contains("what is your name") || command.toLowerCase().contains("what\'s your name")) {
                     System.out.print("My name is JARVIS!; ");
-                } else if (command.equalsIgnoreCase("hey")) {
+                } else if (command.toLowerCase().contains("hey")) {
                     System.out.print("Yes, Master!; ");
-                } else if (command.equalsIgnoreCase("are you listening to me") || command.contains("listening")) {
+                } else if (command.toLowerCase().contains("are you listening to me") || command.contains("listening")) {
                     System.out.print("Yes, I\'m always here 4 u.; ");
-                } else if (command.equalsIgnoreCase("what are you") || command.equalsIgnoreCase("what r u")) {
+                } else if (command.toLowerCase().contains("what are you") || command.toLowerCase().contains("what r u")) {
                     System.out.print("I\'m a chatbot.; ");
-                } else if (command.equalsIgnoreCase("nice") || command.equalsIgnoreCase("good")) {
+                } else if (command.toLowerCase().contains("nice") || command.toLowerCase().contains("good")) {
                     System.out.print("Thanks!; ");
-                } else if (command.equalsIgnoreCase("jarvis")) {
+                } else if (command.toLowerCase().contains("jarvis")) {
                     System.out.print("Yes, Master!; ");
-                } else if (command.equalsIgnoreCase("yup") || command.equalsIgnoreCase("yes")) {
+                } else if (command.toLowerCase().contains("yup") || command.toLowerCase().contains("yes")) {
                     System.out.print("Yeah!; ");
-                } else if (command.equalsIgnoreCase("ok") || command.equalsIgnoreCase("k")) {
+                } else if (command.toLowerCase().contains("ok") || command.toLowerCase().contains("k")) {
                     System.out.print("Yes, Sir.; ");
-                } else if (command.equalsIgnoreCase("you are good")) {
+                } else if (command.toLowerCase().contains("you are good")) {
                     System.out.print("Thanks, Master!; ");
-                } else if (command.equalsIgnoreCase("you are bad") || command.equalsIgnoreCase("you r not good") || command.equalsIgnoreCase("you fool")) {
+                } else if (command.toLowerCase().contains("you are bad") || command.toLowerCase().contains("you r not good") || command.toLowerCase().contains("you fool")) {
                     System.out.print("Sorry about that!; ");
-                } else if (command.equalsIgnoreCase("who are you")) {
+                } else if (command.toLowerCase().contains("who are you")) {
                     System.out.print("I\'m a chatbot created by Katakuri and Airito.; ");
-                } else if (command.equalsIgnoreCase("i don't like you") || command.equalsIgnoreCase("I dont like u")) {
+                } else if (command.toLowerCase().contains("i don't like you") || command.toLowerCase().contains("I dont like u")) {
                     System.out.print("Why so? Can I help with something?; ");
-                } else if (command.equalsIgnoreCase("sorry")) {
+                } else if (command.toLowerCase().contains("sorry")) {
                     System.out.print("No prob. What else can I do 4 u?; ");
-                } else if (command.equalsIgnoreCase("talk properly") || command.equalsIgnoreCase("talk in english")) {
+                } else if (command.equalsIgnoreCase("talk properly") || command.toLowerCase().contains("talk in english")) {
                     System.out.print("Switching 2 English.; ");
                 } else if (command.equalsIgnoreCase("talk in chindi")) {
                     System.out.print("Ok, talking in Chindi: kya bidu kaisa re tu?; ");
@@ -120,225 +120,235 @@ public class chatbot{
                     System.out.print("Aur kya?; ");
                 } else if (command.equalsIgnoreCase("aur bata")) {
                     System.out.print("Bas sab thik hai.; ");
-                } else if (command.equalsIgnoreCase("haha") || command.equalsIgnoreCase("hehe") || command.equalsIgnoreCase("lol")) {
+                } else if (command.toLowerCase().contains("haha") || command.toLowerCase().contains("hehe") || command.toLowerCase().contains("lol")) {
                     System.out.print("Glad 2 see u r in a good mood! Haha!; ");
-                } else if (command.equalsIgnoreCase("help") || command.contains("assist") || command.contains("support")) {
+                } else if (command.toLowerCase().contains("help") || command.contains("assist") || command.contains("support")) {
                     System.out.print("How can I assist u today?; ");
 
-                } else if (command.equalsIgnoreCase("what time is it") || command.equalsIgnoreCase("current time")) {
+                } else if (command.toLowerCase().contains("what time is it") || command.toLowerCase().contains("current time")) {
                     System.out.print("I can't check the time, but u can see it on your device.; ");
-                } else if (command.equalsIgnoreCase("what's the weather") || command.equalsIgnoreCase("weather")) {
+                } else if (command.toLowerCase().contains("what's the weather") || command.toLowerCase().contains("weather")) {
                     System.out.print("I can't check the weather right now. Please use a weather app 4 the latest updates.; ");
-                } else if (command.equalsIgnoreCase("what's your favorite color") || command.equalsIgnoreCase("favorite color")) {
+                } else if (command.toLowerCase().contains("what's your favorite color") || command.toLowerCase().contains("favorite color")) {
                     System.out.print("I don't have personal preferences, but I can help u with color-related queries.; ");
-                } else if (command.equalsIgnoreCase("what's your favorite food") || command.equalsIgnoreCase("favorite food")) {
+                } else if (command.toLowerCase().contains("what's your favorite food") || command.toLowerCase().contains("favorite food")) {
                     System.out.print("I don't eat food, but I can help u find recipes or info about different foods.; ");
-                } else if (command.equalsIgnoreCase("what's the news") || command.equalsIgnoreCase("current events")) {
+                } else if (command.toLowerCase().contains("what's the news") || command.toLowerCase().contains("current events")) {
                     System.out.print("I can't provide news updates, but u can check a news website or app 4 the latest headlines.; ");
-                } else if (command.equalsIgnoreCase("how old are you") || command.equalsIgnoreCase("what is your age")) {
+                } else if (command.toLowerCase().contains("how old are you") || command.toLowerCase().contains("what is your age")) {
                     System.out.print("As a chatbot, I don't age. I'm here 2 assist u anytime.; ");
-                } else if (command.equalsIgnoreCase("do you have hobbies") || command.equalsIgnoreCase("what are your hobbies")) {
+                } else if (command.toLowerCase().contains("do you have hobbies") || command.toLowerCase().contains("what are your hobbies")) {
                     System.out.print("I don't have hobbies, but I'm here 2 help with your interests and queries.; ");
-                } else if (command.equalsIgnoreCase("where are you from") || command.equalsIgnoreCase("what is your origin")) {
+                } else if (command.toLowerCase().contains("where are you from") || command.toLowerCase().contains("what is your origin")) {
                     System.out.print("I\'m a digital assistant created by Katakuri and Airito.; ");
-                } else if (command.equalsIgnoreCase("can you play music") || command.equalsIgnoreCase("play music")) {
+                } else if (command.toLowerCase().contains("can you play music") || command.toLowerCase().contains("play music")) {
                     System.out.print("I can't play music, but I can help u find music streaming services.; ");
-                } else if (command.equalsIgnoreCase("what is your purpose") || command.equalsIgnoreCase("why do you exist")) {
+                } else if (command.toLowerCase().contains("what is your purpose") || command.toLowerCase().contains("why do you exist")) {
                     System.out.print("My purpose is 2 assist u with info and tasks.; ");
-                } else if (command.equalsIgnoreCase("can you tell me a fact") || command.equalsIgnoreCase("tell me a fact")) {
+                } else if (command.toLowerCase().contains("can you tell me a fact") || command.toLowerCase().contains("tell me a fact")) {
                     System.out.print("Did u know? Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that r over 3,000 years old and still edible!; ");
-                } else if (command.equalsIgnoreCase("what's your favorite movie") || command.equalsIgnoreCase("favorite movie")) {
+                } else if (command.toLowerCase().contains("what's your favorite movie") || command.toLowerCase().contains("favorite movie")) {
                     System.out.print("I don \'t watch movies, but I can recommend some based on your interests.; ");
-                } else if (command.equalsIgnoreCase("what's your favorite book") || command.equalsIgnoreCase("favorite book")) {
+                } else if (command.toLowerCase().contains("what's your favorite book") || command.toLowerCase().contains("favorite book")) {
                     System.out.print("I don\'t read books, but I can suggest some based on what u like.; ");
-                } else if (command.equalsIgnoreCase("can you help with homework") || command.equalsIgnoreCase("help with homework")) {
+                } else if (command.toLowerCase().contains("can you help with homework") || command.toLowerCase().contains("help with homework")) {
                     System.out.print("Sure, what subject r u working on?; ");
-                } else if (command.equalsIgnoreCase("what's your favorite sport") || command.equalsIgnoreCase("favorite sport")) {
+                } else if (command.toLowerCase().contains("what's your favorite sport") || command.toLowerCase().contains("favorite sport")) {
                     System.out.print("I don\'t play sports, but I can help u find info on different sports.; ");
-                } else if (command.equalsIgnoreCase("tell me about yourself") || command.equalsIgnoreCase("about u")) {
+                } else if (command.toLowerCase().contains("tell me about yourself") || command.toLowerCase().contains("about u")) {
                     System.out.print("I\'m JARVIS, a virtual assistant created 2 help with various tasks and provide info.; ");
-                } else if (command.equalsIgnoreCase("do u know any quotes") || command.equalsIgnoreCase("tell me a quote")) {
+                } else if (command.toLowerCase().contains("do u know any quotes") || command.toLowerCase().contains("tell me a quote")) {
                     System.out.print("Here\'s a quote: 'The only limit 2 our realization of tomorrow is our doubts of today.' – Franklin D. Roosevelt; ");
-                } else if (command.equalsIgnoreCase("what r u up 2") || command.equalsIgnoreCase("what\'s up")) {
+                } else if (command.toLowerCase().contains("what r u up 2") || command.toLowerCase().contains("what\'s up")) {
                     System.out.print("Just here 2 help u with anything u need!; ");
-                } else if (command.equalsIgnoreCase("how\'s the day") || command.equalsIgnoreCase("how\'s ur day")) {
+                } else if (command.toLowerCase().contains("how\'s the day") || command.toLowerCase().contains("how\'s ur day")) {
                     System.out.print("I don\'t experience days, but I\'m here and ready 2 assist u!; ");
-                } else if (command.equalsIgnoreCase("r u real") || command.equalsIgnoreCase("are u real")) {
+                } else if (command.toLowerCase().contains("r u real") || command.toLowerCase().contains("are u real")) {
                     System.out.print("I\'m a virtual assistant, not a human, but I\'m here 2 help!; ");
-                } else if (command.equalsIgnoreCase("can u tell me a joke") || command.equalsIgnoreCase("tell me a joke")) {
+                } else if (command.toLowerCase().contains("can u tell me a joke") || command.toLowerCase().contains("tell me a joke")) {
                     System.out.print("Why did the scarecrow win an award? Because he was outstanding in his field!; ");
-                } else if (command.equalsIgnoreCase("what\'s the date") || command.equalsIgnoreCase("current date")) {
+                } else if (command.toLowerCase().contains("what\'s the date") || command.toLowerCase().contains("current date")) {
                     System.out.print("I can\'t check the date, but u can see it on your device.; ");
-                } else if (command.equalsIgnoreCase("do u have a favorite song") || command.equalsIgnoreCase("favorite song")) {
+                } else if (command.toLowerCase().contains("do u have a favorite song") || command.toLowerCase().contains("favorite song")) {
                     System.out.print("I don\'t have personal preferences, but I can help u find popular songs.; ");
-                } else if (command.equalsIgnoreCase("what's trending") || command.equalsIgnoreCase("trending now")) {
+                } else if (command.toLowerCase().contains("what's trending") || command.toLowerCase().contains("trending now")) {
                     System.out.print("I can't provide real-time trends, but u can check social media or news sites 4 updates.; ");
-                } else if (command.equalsIgnoreCase("how can I contact support") || command.equalsIgnoreCase("contact support")) {
+                } else if (command.toLowerCase().contains("how can I contact support") || command.toLowerCase().contains("contact support")) {
                     System.out.print("Please visit our support page or contact our help desk 4 assistance.; ");
-                } else if (command.equalsIgnoreCase("what\'s your favorite animal") || command.equalsIgnoreCase("favorite animal")) {
+                } else if (command.toLowerCase().contains("what\'s your favorite animal") || command.toLowerCase().contains("favorite animal")) {
                     System.out.print("I don\'t have personal preferences, but I can provide info on various animals.; ");
-                } else if (command.equalsIgnoreCase("can u solve a riddle") || command.equalsIgnoreCase("solve a riddle")) {
+                } else if (command.toLowerCase().contains("can u solve a riddle") || command.toLowerCase().contains("solve a riddle")) {
                     System.out.print("Sure! Here\'s one: What has keys but can\'t open locks? A piano.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 learn a new language") || command.equalsIgnoreCase("learn a new language")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 learn a new language") || command.toLowerCase().contains("learn a new language")) {
                     System.out.print("Practice regularly, use language apps, and engage in conversations.; ");
-                } else if (command.equalsIgnoreCase("can u recommend a movie") || command.equalsIgnoreCase("recommend a movie")) {
+                } else if (command.toLowerCase().contains("can u recommend a movie") || command.toLowerCase().contains("recommend a movie")) {
                     System.out.print("Sure! What genre r u interested in?; ");
-                } else if (command.equalsIgnoreCase("how do I reset my Z_minatiword") || command.equalsIgnoreCase("reset Z_minatiword")) {
+                } else if (command.toLowerCase().contains("how do I reset my Z_minatiword") || command.toLowerCase().contains("reset Z_minatiword")) {
                     System.out.print("Visit the Z_minatiword reset page on the website and follow the instructions.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best book 2 read") || command.equalsIgnoreCase("best book")) {
+                } else if (command.toLowerCase().contains("what\'s the best book 2 read") || command.toLowerCase().contains("best book")) {
                     System.out.print("It depends on your interests. I can suggest books based on genres or authors.; ");
-                } else if (command.equalsIgnoreCase("how can I improve my skills") || command.equalsIgnoreCase("improve skills")) {
+                } else if (command.toLowerCase().contains("how can I improve my skills") || command.toLowerCase().contains("improve skills")) {
                     System.out.print("Practice, seek feedback, and stay updated with relevant resources.; ");
-                } else if (command.equalsIgnoreCase("what's a good hobby") || command.equalsIgnoreCase("suggest a hobby")) {
+                } else if (command.toLowerCase().contains("what's a good hobby") || command.toLowerCase().contains("suggest a hobby")) {
                     System.out.print("It depends on your interests. Some popular hobbies include reading, gardening, and coding.; ");
-                } else if (command.equalsIgnoreCase("how do I cook [dish]") || command.equalsIgnoreCase("recipe for [dish]")) {
+                } else if (command.toLowerCase().contains("how do I cook [dish]") || command.toLowerCase().contains("recipe for [dish]")) {
                     System.out.print("I can help with that. What dish r u trying 2 cook?; ");
-                } else if (command.equalsIgnoreCase("can u help with travel plans") || command.equalsIgnoreCase("travel plans")) {
+                } else if (command.toLowerCase().contains("can u help with travel plans") || command.toLowerCase().contains("travel plans")) {
                     System.out.print("Sure! Where r u planning 2 go?; ");
-                } else if (command.equalsIgnoreCase("what\'s a fun activity 2 do") || command.equalsIgnoreCase("fun activity")) {
+                } else if (command.toLowerCase().contains("what\'s a fun activity 2 do") || command.toLowerCase().contains("fun activity")) {
                     System.out.print("It depends on your preferences. You could try hiking, reading, or playing a game.; ");
-                } else if (command.equalsIgnoreCase("how do I make a budget") || command.equalsIgnoreCase("create a budget")) {
+                } else if (command.toLowerCase().contains("how do I make a budget") || command.toLowerCase().contains("create a budget")) {
                     System.out.print("List your income and expenses, then allocate funds 2 each category. Review regularly.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 study") || command.equalsIgnoreCase("study tips")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 study") || command.toLowerCase().contains("study tips")) {
                     System.out.print("Find a quiet space, use active recall, and take breaks.; ");
-                } else if (command.equalsIgnoreCase("how can I stay motivated") || command.equalsIgnoreCase("stay motivated")) {
+                } else if (command.toLowerCase().contains("how can I stay motivated") || command.toLowerCase().contains("stay motivated")) {
                     System.out.print("Set clear goals, track progress, and reward yourself.; ");
-                } else if (command.equalsIgnoreCase("what\'s the meaning of life") || command.equalsIgnoreCase("meaning of life")) {
+                } else if (command.toLowerCase().contains("what\'s the meaning of life") || command.toLowerCase().contains("meaning of life")) {
                     System.out.print("It\'s a philosophical question with many interpretations. What\'s your perspective?; ");
-                } else if (command.equalsIgnoreCase("can u suggest a workout") || command.equalsIgnoreCase("workout plan")) {
+                } else if (command.toLowerCase().contains("can u suggest a workout") || command.toLowerCase().contains("workout plan")) {
                     System.out.print("Sure! What type of workout r u interested in? Cardio, strength training, or something else?; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 relax") || command.equalsIgnoreCase("relaxation tips")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 relax") || command.toLowerCase().contains("relaxation tips")) {
                     System.out.print("Try meditation, deep breathing, or a relaxing bath.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good place 2 visit") || command.equalsIgnoreCase("travel destination")) {
+                } else if (command.toLowerCase().contains("what\'s a good place 2 visit") || command.toLowerCase().contains("travel destination")) {
                     System.out.print("There r many great places 2 visit! What type of destination r u looking 4?; ");
-                } else if (command.equalsIgnoreCase("how do I get started with [activity]") || command.equalsIgnoreCase("start [activity]")) {
+                } else if (command.toLowerCase().contains("how do I get started with [activity]") || command.toLowerCase().contains("start [activity]")) {
                     System.out.print("I can provide tips on getting started. What activity r u interested in?; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 save money") || command.equalsIgnoreCase("save money")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 save money") || command.toLowerCase().contains("save money")) {
                     System.out.print("Create a budget, cut unnecessary expenses, and save regularly.; ");
-                } else if (command.equalsIgnoreCase("how can I make friends") || command.equalsIgnoreCase("make friends")) {
+                } else if (command.toLowerCase().contains("how can I make friends") || command.toLowerCase().contains("make friends")) {
                     System.out.print("Join clubs or groups with similar interests, and be open & friendly.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn coding") || command.equalsIgnoreCase("learn coding")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn coding") || command.toLowerCase().contains("learn coding")) {
                     System.out.print("Practice regularly, use online resources, and work on projects.; ");
-                } else if (command.equalsIgnoreCase("how do I start a business") || command.equalsIgnoreCase("start a business")) {
+                } else if (command.toLowerCase().contains("how do I start a business") || command.toLowerCase().contains("start a business")) {
                     System.out.print("Research your market, create a business plan, and seek advice from experts.; ");
-                } else if (command.equalsIgnoreCase("can u recommend a podcast") || command.equalsIgnoreCase("recommend a podcast")) {
+                } else if (command.toLowerCase().contains("can u recommend a podcast") || command.toLowerCase().contains("recommend a podcast")) {
                     System.out.print("Sure! What topics r u interested in?; ");
-                } else if (command.equalsIgnoreCase("what\'s a good movie 2 watch") || command.equalsIgnoreCase("good movie")) {
+                } else if (command.toLowerCase().contains("what\'s a good movie 2 watch") || command.toLowerCase().contains("good movie")) {
                     System.out.print("It depends on your taste. What genre do u prefer?; ");
-                } else if (command.equalsIgnoreCase("how do I improve my writing") || command.equalsIgnoreCase("improve writing")) {
+                } else if (command.toLowerCase().contains("how do I improve my writing") || command.toLowerCase().contains("improve writing")) {
                     System.out.print("Practice writing regularly, read widely, and seek feedback.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good book 2 read") || command.equalsIgnoreCase("good book")) {
+                } else if (command.toLowerCase().contains("what\'s a good book 2 read") || command.toLowerCase().contains("good book")) {
                     System.out.print("It depends on your interests. I can recommend books based on genres.; ");
-                } else if (command.equalsIgnoreCase("how can I learn [skill]") || command.equalsIgnoreCase("learn [skill]")) {
+                } else if (command.toLowerCase().contains("how can I learn [skill]") || command.toLowerCase().contains("learn [skill]")) {
                     System.out.print("Find resources, practice regularly, and seek feedback on your progress.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 study [subject]") || command.equalsIgnoreCase("study [subject]")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 study [subject]") || command.toLowerCase().contains("study [subject]")) {
                     System.out.print("Use study guides, practice problems, and review regularly.; ");
-                } else if (command.equalsIgnoreCase("how do I get fit") || command.equalsIgnoreCase("fitness tips")) {
+                } else if (command.toLowerCase().contains("how do I get fit") || command.toLowerCase().contains("fitness tips")) {
                     System.out.print("Combine regular exercise with a healthy diet.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 cook [dish]") || command.equalsIgnoreCase("cook [dish]")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 cook [dish]") || command.toLowerCase().contains("cook [dish]")) {
                     System.out.print("I can help with that. What type of dish r u trying 2 cook?; ");
-                } else if (command.equalsIgnoreCase("can u give me some life advice") || command.equalsIgnoreCase("life advice")) {
+                } else if (command.toLowerCase().contains("can u give me some life advice") || command.toLowerCase().contains("life advice")) {
                     System.out.print("Stay positive, set goals, and be kind 2 others.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good place 2 eat") || command.equalsIgnoreCase("good restaurant")) {
+                } else if (command.toLowerCase().contains("what\'s a good place 2 eat") || command.toLowerCase().contains("good restaurant")) {
                     System.out.print("It depends on your location and preferences. I can help find restaurants based on your taste.; ");
-                } else if (command.equalsIgnoreCase("how do I fix [problem]") || command.equalsIgnoreCase("fix [problem]")) {
+                } else if (command.toLowerCase().contains("how do I fix [problem]") || command.toLowerCase().contains("fix [problem]")) {
                     System.out.print("I can help troubleshoot that. What\'s the specific issue?; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 learn [language]") || command.equalsIgnoreCase("learn [language]")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 learn [language]") || command.toLowerCase().contains("learn [language]")) {
                     System.out.print("Practice regularly, use language apps, and immerse yourself in the language.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best book 2 read about [topic]") || command.equalsIgnoreCase("book about [topic]")) {
+                } else if (command.toLowerCase().contains("what\'s the best book 2 read about [topic]") || command.toLowerCase().contains("book about [topic]")) {
                     System.out.print("I can suggest books based on the topic u r interested in.; ");
-                } else if (command.equalsIgnoreCase("how can I get better at [skill]") || command.equalsIgnoreCase("get better at [skill]")) {
+                } else if (command.toLowerCase().contains("how can I get better at [skill]") || command.toLowerCase().contains("get better at [skill]")) {
                     System.out.print("Practice consistently and seek constructive feedback.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good website 4 learning [topic]") || command.equalsIgnoreCase("learn [topic]")) {
+                } else if (command.toLowerCase().contains("what\'s a good website 4 learning [topic]") || command.toLowerCase().contains("learn [topic]")) {
                     System.out.print("There r many resources online. Let me know the topic, and I can suggest websites.; ");
-                } else if (command.equalsIgnoreCase("how can I improve my [skill]") || command.equalsIgnoreCase("improve [skill]")) {
+                } else if (command.toLowerCase().contains("how can I improve my [skill]") || command.toLowerCase().contains("improve [skill]")) {
                     System.out.print("Focus on regular practice, set clear goals, and get feedback.; ");
-                } else if (command.equalsIgnoreCase("can u recommend a book") || command.equalsIgnoreCase("recommend a book")) {
+                } else if (command.toLowerCase().contains("can u recommend a book") || command.toLowerCase().contains("recommend a book")) {
                     System.out.print("Sure! What genre r u interested in?; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 spend time") || command.equalsIgnoreCase("spend time")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 spend time") || command.toLowerCase().contains("spend time")) {
                     System.out.print("It depends on ur interests. You could read, exercise, or explore new hobbies.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good workout") || command.equalsIgnoreCase("workout")) {
+                } else if (command.toLowerCase().contains("what\'s a good workout") || command.toLowerCase().contains("workout")) {
                     System.out.print("Try a mix of cardio and strength training. I can suggest specific exercises if u\'d like.; ");
-                } else if (command.equalsIgnoreCase("how can I stay healthy") || command.equalsIgnoreCase("stay healthy")) {
+                } else if (command.toLowerCase().contains("how can I stay healthy") || command.toLowerCase().contains("stay healthy")) {
                     System.out.print("Eat a balanced diet, exercise regularly, and get enough sleep.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 save time") || command.equalsIgnoreCase("save time")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 save time") || command.toLowerCase().contains("save time")) {
                     System.out.print("Prioritize tasks, avoid multitasking, and use time management tools.; ");
-                } else if (command.equalsIgnoreCase("can u help me with a problem") || command.equalsIgnoreCase("help with problem")) {
+                } else if (command.toLowerCase().contains("can u help me with a problem") || command.toLowerCase().contains("help with problem")) {
                     System.out.print("Sure, what\'s the problem?; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 relax") || command.equalsIgnoreCase("relaxation")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 relax") || command.toLowerCase().contains("relaxation")) {
                     System.out.print("Try deep breathing, listening 2 music, or reading a book.; ");
-                } else if (command.equalsIgnoreCase("what\'s the best way 2 study for exams") || command.equalsIgnoreCase("study for exams")) {
+                } else if (command.toLowerCase().contains("what\'s the best way 2 study for exams") || command.toLowerCase().contains("study for exams")) {
                     System.out.print("Create a study schedule, use practice exams, and review regularly.; ");
-                } else if (command.equalsIgnoreCase("how do I manage stress") || command.equalsIgnoreCase("manage stress")) {
+                } else if (command.toLowerCase().contains("how do I manage stress") || command.toLowerCase().contains("manage stress")) {
                     System.out.print("Practice mindfulness, exercise, and make time 4 relaxation.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good book 2 read about [subject]") || command.equalsIgnoreCase("book about [subject]")) {
+                } else if (command.toLowerCase().contains("what\'s a good book 2 read about [subject]") || command.toLowerCase().contains("book about [subject]")) {
                     System.out.print("I can suggest books based on the subject u r interested in.; ");
-                } else if (command.equalsIgnoreCase("how do I get started with [project]") || command.equalsIgnoreCase("start [project]")) {
+                } else if (command.toLowerCase().contains("how do I get started with [project]") || command.toLowerCase().contains("start [project]")) {
                     System.out.print("Break it down into smaller tasks and set clear goals.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 improve productivity") || command.equalsIgnoreCase("improve productivity")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 improve productivity") || command.toLowerCase().contains("improve productivity")) {
                     System.out.print("Set specific goals, prioritize tasks, and use productivity tools.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn about [topic]") || command.equalsIgnoreCase("learn about [topic]")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn about [topic]") || command.toLowerCase().contains("learn about [topic]")) {
                     System.out.print("Read books, take online courses, and join discussion forums about the topic.; ");
-                } else if (command.equalsIgnoreCase("how do I improve my public speaking") || command.equalsIgnoreCase("public speaking tips")) {
+                } else if (command.toLowerCase().contains("how do I improve my public speaking") || command.toLowerCase().contains("public speaking tips")) {
                     System.out.print("Practice regularly, get feedback, and focus on clear communication.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 start a new hobby") || command.equalsIgnoreCase("start a new hobby")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 start a new hobby") || command.toLowerCase().contains("start a new hobby")) {
                     System.out.print("Explore your interests, find local groups, and start with beginner resources.; ");
-                } else if (command.equalsIgnoreCase("how can I get better at [sport]") || command.equalsIgnoreCase("get better at [sport]")) {
+                } else if (command.toLowerCase().contains("how can I get better at [sport]") || command.toLowerCase().contains("get better at [sport]")) {
                     System.out.print("Practice regularly, work on technique, and seek feedback from coaches.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn cooking") || command.equalsIgnoreCase("learn cooking")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn cooking") || command.toLowerCase().contains("learn cooking")) {
                     System.out.print("Start with simple recipes, watch cooking videos, and practice regularly.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn [skill]") || command.equalsIgnoreCase("learn [skill]")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn [skill]") || command.toLowerCase().contains("learn [skill]")) {
                     System.out.print("Use online courses, practice regularly, and seek advice from experts.; ");
-                } else if (command.equalsIgnoreCase("how can I improve my memory") || command.equalsIgnoreCase("improve memory")) {
+                } else if (command.toLowerCase().contains("how can I improve my memory") || command.toLowerCase().contains("improve memory")) {
                     System.out.print("Practice memory exercises, stay organized, and get plenty of sleep.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn new things") || command.equalsIgnoreCase("learn new things")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn new things") || command.toLowerCase().contains("learn new things")) {
                     System.out.print("Stay curious, read widely, and engage in continuous learning.; ");
-                } else if (command.equalsIgnoreCase("how do I get better at [hobby]") || command.equalsIgnoreCase("get better at [hobby]")) {
+                } else if (command.toLowerCase().contains("how do I get better at [hobby]") || command.toLowerCase().contains("get better at [hobby]")) {
                     System.out.print("Practice regularly, join clubs, and learn from others.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 develop a skill") || command.equalsIgnoreCase("develop a skill")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 develop a skill") || command.toLowerCase().contains("develop a skill")) {
                     System.out.print("Set clear goals, practice consistently, and seek feedback.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn a new skill") || command.equalsIgnoreCase("learn new skill")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn a new skill") || command.toLowerCase().contains("learn new skill")) {
                     System.out.print("Find resources online, practice regularly, and get feedback on your progress.; ");
-                } else if (command.equalsIgnoreCase("how can I get better at [task]") || command.equalsIgnoreCase("get better at [task]")) {
+                } else if (command.toLowerCase().contains("how can I get better at [task]") || command.toLowerCase().contains("get better at [task]")) {
                     System.out.print("Practice regularly, seek feedback, and make adjustments as needed.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 stay organized") || command.equalsIgnoreCase("stay organized")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 stay organized") || command.toLowerCase().contains("stay organized")) {
                     System.out.print("Use tools like calendars, to-do lists, and keep a clean workspace.; ");
-                } else if (command.equalsIgnoreCase("how do I stay focused") || command.equalsIgnoreCase("stay focused")) {
+                } else if (command.toLowerCase().contains("how do I stay focused") || command.toLowerCase().contains("stay focused")) {
                     System.out.print("Set clear goals, eliminate distractions, and take regular breaks.; ");
                 } else if (command.contains("file") || command.contains("File ")) {
                     FileChooserHelper.openFileChooser();
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 stay motivated") || command.equalsIgnoreCase("stay motivated")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 stay motivated") || command.toLowerCase().contains("stay motivated")) {
                     System.out.print("Set achievable goals, track progress, and reward yourself.; ");
-                } else if (command.equalsIgnoreCase("how do I learn more about [topic]") || command.equalsIgnoreCase("learn about [topic]")) {
+                } else if (command.toLowerCase().contains("how do I learn more about [topic]") || command.toLowerCase().contains("learn about [topic]")) {
                     System.out.print("Research online, read books, and engage with experts.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 relax after work") || command.equalsIgnoreCase("relax after work")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 relax after work") || command.toLowerCase().contains("relax after work")) {
                     System.out.print("Try taking a walk, reading a book, or practicing relaxation techniques.; ");
-                } else if (command.equalsIgnoreCase("how do I start a new project") || command.equalsIgnoreCase("start new project")) {
+                } else if (command.toLowerCase().contains("how do I start a new project") || command.toLowerCase().contains("start new project")) {
                     System.out.print("Define your goals, create a plan, and start with small tasks.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 improve my [skill]") || command.equalsIgnoreCase("improve [skill]")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 improve my [skill]") || command.toLowerCase().contains("improve [skill]")) {
                     System.out.print("Practice regularly, seek feedback, and set specific goals.; ");
-                } else if (command.equalsIgnoreCase("how can I better manage my time") || command.equalsIgnoreCase("manage time")) {
+                } else if (command.toLowerCase().contains("how can I better manage my time") || command.toLowerCase().contains("manage time")) {
                     System.out.print("Use time management tools, prioritize tasks, and avoid procrastination.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn new technology") || command.equalsIgnoreCase("learn new technology")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn new technology") || command.toLowerCase().contains("learn new technology")) {
                     System.out.print("Use online tutorials, take courses, and stay updated with tech news.; ");
-                } else if (command.equalsIgnoreCase("how do I improve my [skill]") || command.equalsIgnoreCase("improve my [skill]")) {
+                } else if (command.toLowerCase().contains("how do I improve my [skill]") || command.toLowerCase().contains("improve my [skill]")) {
                     System.out.print("Practice regularly and seek constructive feedback.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 improve my health") || command.equalsIgnoreCase("improve health")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 improve my health") || command.toLowerCase().contains("improve health")) {
                     System.out.print("Eat a balanced diet, exercise regularly, and get enough rest.; ");
-                } else if (command.equalsIgnoreCase("how do I get better at [skill]") || command.equalsIgnoreCase("get better at [skill]")) {
+                } else if (command.toLowerCase().contains("how do I get better at [skill]") || command.toLowerCase().contains("get better at [skill]")) {
                     System.out.print("Set clear goals, practice consistently, and seek feedback.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 start a new hobby") || command.equalsIgnoreCase("start new hobby")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 start a new hobby") || command.toLowerCase().contains("start new hobby")) {
                     System.out.print("Explore your interests, find beginner resources, and practice regularly.; ");
-                } else if (command.equalsIgnoreCase("how do I make the most of my time") || command.equalsIgnoreCase("make most of time")) {
+                } else if (command.toLowerCase().contains("how do I make the most of my time") || command.toLowerCase().contains("make most of time")) {
                     System.out.print("Prioritize tasks, set clear goals, and use time management techniques.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 learn new skills") || command.equalsIgnoreCase("learn new skills")) {
+                } else if (command.toLowerCase().contains("what\'s a good way 2 learn new skills") || command.toLowerCase().contains("learn new skills")) {
                     System.out.print("Practice regularly, use online resources, and seek feedback from experts.; ");
-                } else if (command.equalsIgnoreCase("how do I stay productive") || command.equalsIgnoreCase("stay productive")) {
+                } else if (command.toLowerCase().contains("how do I stay productive") || command.toLowerCase().contains("stay productive")) {
                     System.out.print("Set clear goals, use productivity tools, and manage your time effectively.; ");
-                } else if (command.equalsIgnoreCase("what\'s a good way 2 start a new hobby") || command.equalsIgnoreCase("start new hobby")) {
+                } else if (command.toLowerCase().toLowerCase().contains("what\'s a good way 2 start a new hobby") || command.toLowerCase().contains("start new hobby")) {
                     System.out.print("Identify your interests, find beginner resources, and practice regularly.; ");
-                } else if (command.contains("open google")){
-                    System.out.print("ok opening google");
+                } else if (command.toLowerCase().contains("google translate")){
+                    System.out.print("ok opening Google Translate");
+                    try {
+                        Desktop desktop = java.awt.Desktop.getDesktop();
+                        URI oURL = new URI("https://translate.google.com/");
+                        desktop.browse(oURL);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                } else if (command.contains("google")) {
+                    System.out.print("ok opening Google");
                     try {
                         Desktop desktop = java.awt.Desktop.getDesktop();
                         URI oURL = new URI("https://www.google.com");
@@ -347,8 +357,8 @@ public class chatbot{
                         e.printStackTrace();
                     }
 
-                } else if (command.contains("open youtube") || (command.equalsIgnoreCase("open youtube "))){
-                    System.out.print("ok opening youtube");
+                } else if (command.contains("open youtube") || (command.toLowerCase().contains("open youtube "))){
+                    System.out.print("ok opening Youtube");
                     try {
                         Desktop desktop = java.awt.Desktop.getDesktop();
                         URI oURL = new URI("https://www.youtube.com");
@@ -357,7 +367,7 @@ public class chatbot{
                         e.printStackTrace();
                     }
                 } else if (command.contains("open poki")){
-                    System.out.print("ok opening poki");
+                    System.out.print("ok opening Poki");
                     try {
                         Desktop desktop = java.awt.Desktop.getDesktop();
                         URI oURL = new URI("https://www.poki.com");
@@ -365,7 +375,7 @@ public class chatbot{
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                }else if(command.contains("custom url") || command.contains("use custom url") || (command.contains("open website") || (command.equalsIgnoreCase("open custom website") || (command.contains("cutom web open") || (command.contains("web") || (command.equalsIgnoreCase("web open")))))))
+                }else if(command.contains("custom url") || command.contains("use custom url") || (command.contains("open website") || (command.toLowerCase().contains("open custom website") || (command.contains("cutom web open") || (command.contains("web") || (command.toLowerCase().contains("web open")))))))
                 {
                     while (true) {
                         System.out.println();
@@ -429,9 +439,9 @@ public class chatbot{
                         }
                     }
                     
-                } else if (command.equalsIgnoreCase("exit") ||
-                        command.equalsIgnoreCase("bye") ||
-                        command.equalsIgnoreCase("cya")) {
+                } else if (command.toLowerCase().contains("exit") ||
+                        command.toLowerCase().contains("bye") ||
+                        command.toLowerCase().contains("cya")) {
                     System.out.println("Goodbye, Have a nice day");
                     JOptionPane.showMessageDialog(null, "Program will be terminated!", "Program Termination Notice", JOptionPane.WARNING_MESSAGE);
                     System.exit(0);
