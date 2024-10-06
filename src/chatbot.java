@@ -306,37 +306,7 @@ public class chatbot{
                 } else if (command.equalsIgnoreCase("how do I stay focused") || command.equalsIgnoreCase("stay focused")) {
                     System.out.print("Set clear goals, eliminate distractions, and take regular breaks.; ");
                 } else if (command.contains("file") || command.contains("File ")) {
-                    System.out.println("Sewer Sir! Here is the Dialog Dabba");
-
-                    // Create the JDialog for the file chooser
-                    JDialog fileDialog = new JDialog();
-                    fileDialog.setTitle("Select and Open File");
-                    fileDialog.setAlwaysOnTop(true);
-                    fileDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-                    fileDialog.setSize(300, 200);
-                    fileDialog.setLocationRelativeTo(null); // Center the dialog on the screen
-
-                    // Add a window listener to close the dialog after the file chooser closes
-                    fileDialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                        @Override
-                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                            fileDialog.dispose(); // Close the dialog when the window is closing
-                        }
-                    });
-                    // Make the dialog visible
-                    
-
-                    // Open the file chooser in a modal dialog
-                    JFileChooser fileChooser = new JFileChooser();
-                    int returnValue = fileChooser.showOpenDialog(fileDialog);
-                    if (returnValue == JFileChooser.APPROVE_OPTION) {
-                        File selectedFile = fileChooser.getSelectedFile();
-                        // Process the selected file
-                    }
-                    fileDialog.setVisible(true);
-                    // After file chooser closes, dispose of the dialog
-                    fileDialog.dispose();
-
+                    FileChooserHelper.openFileChooser();
                 } else if (command.equalsIgnoreCase("what\'s a good way 2 stay motivated") || command.equalsIgnoreCase("stay motivated")) {
                     System.out.print("Set achievable goals, track progress, and reward yourself.; ");
                 } else if (command.equalsIgnoreCase("how do I learn more about [topic]") || command.equalsIgnoreCase("learn about [topic]")) {
