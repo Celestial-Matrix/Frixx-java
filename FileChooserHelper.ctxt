@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.target=FileChooserHelper
-comment1.params=frame
-comment1.target=void\ openFileChooser(javax.swing.JFrame)
-numComments=2
