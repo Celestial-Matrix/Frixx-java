@@ -9,7 +9,8 @@
     "redhat.vscode-xml",
     "redhat.vscode-yaml",    // Prettier extension
     "VisualStudioExptTeam.vscodeintellicode-completions",
-    "VisualStudioExptTeam.vscodeintellicode-insiders"
+    "VisualStudioExptTeam.vscodeintellicode-insiders",
+    "TabNine.tabnine-vscode"
   ],
   "postCreateCommand": "pip install -r requirements.txt", // Post-creation steps, e.g., Python dependencies
   "settings": {

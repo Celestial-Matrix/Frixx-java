@@ -1,10 +1,11 @@
-
+import game.*;
 import java.util.*;
 import java.lang.String;
 import java.awt.*;
 import java.net.*;
 import java.io.*;
 import javax.swing.*;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;  // For JFrame, JFileChooser, JOptionPane
 import java.awt.*;      // For Desktop
@@ -56,7 +57,7 @@ public class chatbot{
                     System.out.println(getSeparatorLine());
                 }
                 count = 2;
-                
+
                 if (command.contains("hi") || command.contains("yo") || command.contains("heya") || command.contains("hello")) {
                     System.out.print("Yo! What's up man?");
                 } else if (command.contains("curse words")) {
@@ -439,10 +440,10 @@ public class chatbot{
                             System.out.println("Wrong Statement! Enter again");
                         }
                     }
-                    
+
                 } else if (command.contains("exit") ||
-                        command.contains("bye") ||
-                        command.contains("cya")) {
+                command.contains("bye") ||
+                command.contains("cya")) {
                     System.out.println("Goodbye, Have a nice day");
                     JOptionPane.showMessageDialog(null, "Program will be terminated!", "Program Termination Notice", JOptionPane.WARNING_MESSAGE);
                     System.exit(0);
@@ -460,8 +461,32 @@ public class chatbot{
                     int random = (int) (Math.random() * max);
                     in.nextLine();
                     System.out.println("The result is" + random);
-                    
-                }else {
+
+                }else if(command.contains("game")||command.contains("gam")){
+                    System.out.println("Sure! Here is a simple ping pong game.");
+                    JFrame frame = new JFrame("Ping Pong Game");
+                    PingPongGame game = new PingPongGame(frame);
+
+                    // Create the "End Game" button
+                    JButton endGameButton = new JButton("End Game");
+
+                    // Make the button span the entire width of the window
+                    endGameButton.setPreferredSize(new Dimension(frame.getWidth(), 40)); // Set button height to 40
+
+                    // Add action listener to end the game when button is clicked
+                    endGameButton.addActionListener(e -> game.endGame());
+
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.setSize(600, 500);
+                    frame.setLayout(new BorderLayout());
+                    frame.add(game, BorderLayout.CENTER); // Add the game panel to the center
+                    frame.add(endGameButton, BorderLayout.SOUTH); // Add the button directly to the bottom (spans full
+                                                                  // width)
+                    frame.setResizable(false); // Disable window maximizing
+                    frame.setVisible(true);
+                    System.out.println("The game is closed");
+                }
+                else {
                     System.out.print("I didn't get what you meant.");
                 }
 
