@@ -1,15 +1,11 @@
 import game.*;
 import java.util.*;
-import java.lang.String;
+import java.lang.*;
 import java.awt.*;
 import java.net.*;
 import java.io.*;
 import javax.swing.*;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;  // For JFrame, JFileChooser, JOptionPane
-import java.awt.*;      // For Desktop
-import java.io.File;
 public class chatbot{
 
     private static String getSeparatorLine() {
