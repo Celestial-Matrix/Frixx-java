@@ -5,31 +5,33 @@ import java.awt.*;
 import java.net.*;
 import java.io.*;
 import javax.swing.*;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;  // For JFrame, JFileChooser, JOptionPane
 import java.awt.*;      // For Desktop
 import java.io.File;
+
 public class informal{
     Scanner in = new Scanner(System.in);
+    
     private static String getSeparatorLine() {
-        return "______________________________________________________________________________"; // Adjust length as needed
+        return "______________________________________________________________________________"; // Adjust length as
+                                                                                                 // needed
     }
 
-    public void informal_c(String command)
+    public void informal_c(String command, int count)
     {
-        int count = 0;
         while (true){
             while (true) {
                 if (count == 0)
                     command = "hey";
-                else {
+                else if(count == 2){
                     System.out.println(getSeparatorLine());
                     System.out.println(getSeparatorLine());
                     command = in.nextLine();
                     command = command.toLowerCase();
                     System.out.println(getSeparatorLine());
                 }
+                
                 count = 2;
 
                 if (command.contains("hi") || command.contains("yo") || command.contains("heya") || command.contains("hello")) {
@@ -353,67 +355,8 @@ public class informal{
                     }
                 }else if(command.contains("custom url") || command.contains("use custom url") || (command.contains("open website") || (command.contains("open custom website") || (command.contains("cutom web open") || (command.contains("web") || (command.contains("web open")))))))
                 {
-                    while (true) {
-                        System.out.println();
-                        System.out.println("1 for Enter Custom URL");
-                        System.out.println("2 for exit Custom URL mode");
-                        System.out.println();
-
-                        int option = -1; // Initialize with a default invalid option
-                        try {
-                            System.out.println(getSeparatorLine());
-                            option = in.nextInt();
-                            in.nextLine(); // Clear the buffer
-                        } catch (InputMismatchException e) {
-                            System.out.println("Wrong Statement! Enter again");
-                            in.nextLine(); // Clear the buffer for the next input
-                            continue; // Restart the loop
-                        }
-
-                        if (option == 1) {
-                            System.out.println("1 for WWW protocol");
-                            System.out.println("2 for HTTPS protocol");
-                            System.out.println("Select the protocol");
-                            int select_protocol;
-                            try {
-                                System.out.println(getSeparatorLine());
-                                select_protocol = in.nextInt();
-                                in.nextLine(); // Clear the buffer
-                            } catch (InputMismatchException e) {
-                                System.out.println("Wrong Statement! Enter again");
-                                in.nextLine(); // Clear the buffer for the next input
-                                continue; // Restart the loop
-                            }
-                            String prefix;
-
-                            switch (select_protocol) {
-                                case 1:
-                                    prefix = "www.";
-                                    break; // Break here to continue below
-                                case 2:
-                                    prefix = "https://";
-                                    break; // Break here to continue below
-                                default:
-                                    System.out.println("Invalid protocol selection.");
-                                    continue; // Skip the rest of this iteration
-                            }
-
-                            try {
-                                System.out.println("Enter Custom URL, Please don't type the prefix (e.g., www)");
-                                String url = in.next();
-                                Desktop desktop = java.awt.Desktop.getDesktop();
-                                URI oURL = new URI(prefix + url);
-                                desktop.browse(oURL);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                        } else if (option == 2) {
-                            break; // Exit the custom URL mode
-                        } else {
-                            System.out.println("Wrong Statement! Enter again");
-                        }
-                    }
+                    web web = new web();
+                    web.open();
 
                 } else if (command.contains("exit") ||
                 command.contains("bye") ||
@@ -425,7 +368,7 @@ public class informal{
                 } else if (command.isEmpty()) { // Check for empty command
                     System.out.print("How may I assist you?");
 
-                } else if (command.contains("none")) {
+                }else if (command.contains("none")) {
                     // If 'none' was set, it will break out of the while loop
                     break;
 
@@ -459,9 +402,16 @@ public class informal{
                     frame.setResizable(false); // Disable window maximizing
                     frame.setVisible(true);
                     System.out.println("The game is closed");
+                } else if (command == "entered informal mode") {
+                    System.out.println("Switched to Informal mode");
+
+                }else if(command.contains("formal")){
+                    return;
+
                 }
                 else {
                     System.out.print("I didn't get what you meant.");
+
                 }
 
                 System.out.println();

@@ -16,19 +16,21 @@ public class formal{
         return "______________________________________________________________________________"; // Adjust length as needed
     }
 
-    public void informal_c(String command)
+    public void formal_c(String command, int count)
     {
-        int count = 0;
         while (true){
             while (true) {
                 if (count == 0)
                     command = "hey";
-                else {
+                else if (count >= 2) {
                     System.out.println(getSeparatorLine());
                     System.out.println(getSeparatorLine());
                     command = in.nextLine();
                     command = command.toLowerCase();
                     System.out.println(getSeparatorLine());
+                }
+                else if (count == -3) {
+                    System.out.println("Switched Formal Mode");
                 }
                 count = 2;
 
@@ -459,9 +461,18 @@ public class formal{
                     frame.setResizable(false); // Disable window maximizing
                     frame.setVisible(true);
                     System.out.println("The game is closed");
-                }else if(command.contains("informal")){
+
+                } else if (command.contains("informal")) {
+                    String command_1 = "entered informal mode";
+                    int count_1 = -2;
                     informal f = new informal();
-                    f.informal_c(command);
+                    f.informal_c(command_1, count_1);
+
+                    command = "escape";
+                    count = -3;
+
+                } else if (command == "escape") {
+                    
                 }
                 else {
                     System.out.print("I didn't get what you meant.");
