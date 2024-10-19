@@ -61,7 +61,7 @@ public class informal{
                 } else if (command.contains("thank") || command.contains("thanks")) {
                     System.out.print("U\'re welcome!; ");
                 } else if (command.contains("what is your name") || command.contains("what\'s your name")) {
-                    System.out.print("My name is JARVIS!; ");
+                    System.out.print("My name is Frix!; ");
                 } else if (command.contains("hey")) {
                     System.out.print("Yes, Master!; ");
                 } else if (command.contains("are you listening to me") || command.contains("listening")) {
