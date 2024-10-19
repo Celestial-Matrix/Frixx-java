@@ -51,8 +51,8 @@ public class chatbot{
         System.out.println(getSeparatorLine());
 
         String command = "hey";
-
-        informal f = new informal();
-        f.informal_c(command);
+        int count = -2;
+        formal f = new formal();
+        f.formal_c(command, count);
     }
 }
