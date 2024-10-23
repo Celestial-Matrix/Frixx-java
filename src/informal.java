@@ -358,11 +358,10 @@ public class informal{
                     web web = new web();
                     web.open();
 
-                } else if (command.contains("exit") ||
-                command.contains("bye") ||
-                command.contains("cya")) {
+                } else if (command.contains("exit") || command.contains("bye") || command.contains("cya")) {
                     System.out.println("Goodbye, Have a nice day");
                     JOptionPane.showMessageDialog(null, "Program will be terminated!", "Program Termination Notice", JOptionPane.WARNING_MESSAGE);
+                    in.close();
                     System.exit(0);
 
                 } else if (command.isEmpty()) { // Check for empty command
@@ -405,7 +404,7 @@ public class informal{
                 } else if (command == "entered informal mode") {
                     System.out.println("Switched to Informal mode");
 
-                }else if(command.contains("formal")){
+                } else if (command.contains("formal")) {
                     return;
 
                 }

@@ -1,9 +1,6 @@
-
-
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 
 public class ChatbotWindow {
@@ -13,14 +10,15 @@ public class ChatbotWindow {
     private JButton sendButton;
     private PipedOutputStream pipedOut;
 
-    
-
     public ChatbotWindow() {
         // Create the JFrame and components
         frame = new JFrame("Frix");
 
         // Disable the maximize button by making the frame non-resizable
         frame.setResizable(false); // This disables the maximize button only
+
+        ImageIcon icon = new ImageIcon(getClass().getResource("./media/Frix.jpg"));
+        frame.setIconImage(icon.getImage());
 
         chatArea = new JTextArea(20, 50);
         inputField = new JTextField(40);
@@ -47,20 +45,10 @@ public class ChatbotWindow {
         }
 
         // Add action listener for the send button
-        sendButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                processUserCommand();
-            }
-        });
+        sendButton.addActionListener(e -> processUserCommand());
 
         // Allow pressing "Enter" in the input field to send the command
-        inputField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                processUserCommand();
-            }
-        });
+        inputField.addActionListener(e -> processUserCommand());
 
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,8 +79,6 @@ public class ChatbotWindow {
             // Clear the input field
             inputField.setText("");
 
-            // Limit chat history if needed
-            
         } else {
             // Optionally handle empty input
             chatArea.append("Me: (empty input)\n");
