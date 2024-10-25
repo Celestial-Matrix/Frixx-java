@@ -18,7 +18,7 @@ public class ChatbotWindow {
 
     public ChatbotWindow() {
         // Create the JFrame and components
-        frame = new JFrame("Frix");
+        frame = new JFrame("Frixx");
 
         // Disable the maximize button by making the frame non-resizable
         frame.setResizable(false); // This disables the maximize button only
