@@ -3,13 +3,8 @@ import java.util.*;
 import java.lang.String;
 import java.awt.*;
 import java.net.*;
-import java.io.*;
 import javax.swing.*;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;  // For JFrame, JFileChooser, JOptionPane
-import java.awt.*;      // For Desktop
-import java.io.File;
 public class formal{
     Scanner in = new Scanner(System.in);
     private static String getSeparatorLine() {
@@ -339,6 +334,8 @@ public class formal{
                 {
                     web web = new web();
                     web.open();
+                    System.out.println();
+                    System.out.println("The Custom URL mode has been exited.");
 
                 } else if (command.contains("exit") || command.contains("bye") || command.contains("cya")) {
                     System.out.println("Goodbye, Have a nice day");

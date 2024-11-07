@@ -1,9 +1,4 @@
-import game.*;
 import java.util.*;
-import java.lang.*;
-import java.awt.*;
-import java.net.*;
-import java.io.*;
 import javax.swing.*;
 
 public class chatbot{
@@ -50,5 +45,6 @@ public class chatbot{
         int count = -2;
         formal f = new formal();
         f.formal_c(command, count);
+        in.close();
     }
 }

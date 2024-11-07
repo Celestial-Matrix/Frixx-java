@@ -1,6 +1,5 @@
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
 
 public class FileChooserHelper {
@@ -30,6 +29,7 @@ public class FileChooserHelper {
                     JFileChooser fileChooser = new JFileChooser();
                     int returnValue = fileChooser.showOpenDialog(fileDialog);
                     if (returnValue == JFileChooser.APPROVE_OPTION) {
+                        @SuppressWarnings("unused")
                         File selectedFile = fileChooser.getSelectedFile();
                         // Process the selected file
                     }

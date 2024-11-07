@@ -1,4 +1,4 @@
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -12,8 +12,9 @@ public class ChatbotWindow {
     private JTextArea chatArea;
     private JTextField inputField;
     private JButton sendButton;
-    private JLabel dateLabel; // Label to display the date and day
+    private JLabel dateLabel; // Label to display the date
     private JLabel timeLabel; // Label to display the time
+    private JLabel dayLabel; // Label to display the day
     private PipedOutputStream pipedOut;
 
     public ChatbotWindow() {
@@ -33,6 +34,7 @@ public class ChatbotWindow {
         // Initialize the labels for date and time
         dateLabel = new JLabel();
         timeLabel = new JLabel();
+        dayLabel = new JLabel();
 
         // Set up the layout
         JPanel inputPanel = new JPanel();
@@ -45,8 +47,9 @@ public class ChatbotWindow {
         frame.add(inputPanel, BorderLayout.SOUTH);
         
         // Create a panel for the date and time labels
-        JPanel dateTimePanel = new JPanel(new GridLayout(2, 1)); // Vertical layout
+        JPanel dateTimePanel = new JPanel(new GridLayout(3, 1)); // Vertical layout
         dateTimePanel.add(dateLabel);
+        dateTimePanel.add(dayLabel);
         dateTimePanel.add(timeLabel);
         dateTimePanel.setAlignmentX(Component.RIGHT_ALIGNMENT); // Align to the right
         
@@ -94,11 +97,14 @@ public class ChatbotWindow {
     // Update the date and time labels with the current date and time
     private void updateDateTime() {
         SwingUtilities.invokeLater(() -> {
-            String currentDate = new SimpleDateFormat("EEEE, yyyy-MM-dd").format(new Date()); // Include day
+            String currentDate = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+            String currentDay = new SimpleDateFormat("EEEE").format(new Date());
             String currentTime = new SimpleDateFormat("HH:mm:ss").format(new Date());
             dateLabel.setText("Date: " + currentDate);
+            dayLabel.setText("Day: " + currentDay);
             timeLabel.setText("Time: " + currentTime);
             dateLabel.setHorizontalAlignment(SwingConstants.RIGHT); // Align to the right
+            dayLabel.setHorizontalAlignment(SwingConstants.RIGHT); // Align to the right
             timeLabel.setHorizontalAlignment(SwingConstants.RIGHT); // Align to the right
         });
     }

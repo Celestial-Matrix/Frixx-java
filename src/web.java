@@ -1,5 +1,4 @@
 import java.net.URI;
-import java.util.InputMismatchException;
 import java.util.*;
 import java.awt.*;
 
@@ -11,6 +10,8 @@ public class web {
 
     public void open() {
         while (true) {
+            System.out.println();
+            System.out.println("Entering Custom URL mode...");
             System.out.println();
             Scanner in = new Scanner(System.in);
             System.out.println("1 for Enter Custom URL");
