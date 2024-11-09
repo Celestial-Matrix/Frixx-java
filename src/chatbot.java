@@ -21,7 +21,7 @@ public class chatbot{
         System.out.println(getSeparatorLine());
 
         String z_minati = "CursedWorld";
-        String airito = "CursedTweaks";
+        String airito = "The Bane of All Evil";
         String guest = "Chat4Fun";
         
         if(in_pass.equals(z_minati) || in_pass.equals(airito)){
