@@ -1,5 +1,3 @@
-package game;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,6 +18,9 @@ public class PingPongGame extends JPanel implements ActionListener {
 
     // Set the paddleY position relative to the panel's height
     private int paddleY;
+
+    // Flag to track whether the game is paused
+    private boolean isPaused = false;
 
     public PingPongGame(JFrame frame) {
         this.frame = frame; // Save the reference to the frame
@@ -42,7 +43,9 @@ public class PingPongGame extends JPanel implements ActionListener {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                paddleVelX = 0; // Stop moving when key is released
+                if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                    paddleVelX = 0; // Stop moving when key is released
+                }
             }
         });
 
@@ -50,6 +53,16 @@ public class PingPongGame extends JPanel implements ActionListener {
         Timer startDelay = new Timer(1000, e -> timer.start()); // Start timer after 1 second
         startDelay.setRepeats(false); // Only run once
         startDelay.start();
+    }
+
+    // Method to toggle the pause state
+    private void togglePause() {
+        if (isPaused) {
+            timer.start(); // Resume the timer
+        } else {
+            timer.stop(); // Pause the timer
+        }
+        isPaused = !isPaused; // Toggle the paused state
     }
 
     @Override
@@ -67,46 +80,48 @@ public class PingPongGame extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Move the ball
-        ballX += ballVelX;
-        ballY += ballVelY;
+        if (!isPaused) {
+            // Move the ball
+            ballX += ballVelX;
+            ballY += ballVelY;
 
-        // Bounce off walls
-        if (ballX < 0 || ballX > getWidth() - 20) {
-            ballVelX = -ballVelX; // Reverse direction
+            // Bounce off walls
+            if (ballX < 0 || ballX > getWidth() - 20) {
+                ballVelX = -ballVelX; // Reverse direction
+            }
+            if (ballY < 0) {
+                ballVelY = -ballVelY; // Reverse direction
+            }
+
+            // Move paddle
+            paddleX += paddleVelX;
+            // Prevent the paddle from moving off-screen
+            paddleX = Math.max(paddleX, 0);
+            paddleX = Math.min(paddleX, getWidth() - paddleWidth);
+
+            // Bounce off paddle
+            if (ballY + 20 >= paddleY && ballX + 20 > paddleX && ballX < paddleX + paddleWidth) {
+                ballVelY = -ballVelY; // Reverse vertical direction
+                ballY = paddleY - 20; // Position ball above the paddle
+                ballColor = Color.GREEN; // Change color on hit for visual feedback
+                paddleBounceCount++; // Increment paddle bounce count
+
+                // Optional: Slightly increase ball speed for difficulty
+                ballVelX *= 1.05;
+                ballVelY *= 1.05;
+            } else {
+                ballColor = Color.BLUE; // Reset ball color when not hitting paddle
+            }
+
+            // Game over condition
+            if (ballY > getHeight()) {
+                timer.stop();
+                JOptionPane.showMessageDialog(this, "Game Over! Score: " + paddleBounceCount); // Show game over message
+                frame.dispose(); // Close the game window
+            }
+
+            repaint(); // Refresh the game state
         }
-        if (ballY < 0) {
-            ballVelY = -ballVelY; // Reverse direction
-        }
-
-        // Move paddle
-        paddleX += paddleVelX;
-        // Prevent the paddle from moving off-screen
-        paddleX = Math.max(paddleX, 0);
-        paddleX = Math.min(paddleX, getWidth() - paddleWidth);
-
-        // Bounce off paddle
-        if (ballY + 20 >= paddleY && ballX + 20 > paddleX && ballX < paddleX + paddleWidth) {
-            ballVelY = -ballVelY; // Reverse vertical direction
-            ballY = paddleY - 20; // Position ball above the paddle
-            ballColor = Color.GREEN; // Change color on hit for visual feedback
-            paddleBounceCount++; // Increment paddle bounce count
-
-            // Optional: Slightly increase ball speed for difficulty
-            ballVelX *= 1.05;
-            ballVelY *= 1.05;
-        } else {
-            ballColor = Color.BLUE; // Reset ball color when not hitting paddle
-        }
-
-        // Game over condition
-        if (ballY > getHeight()) {
-            timer.stop();
-            JOptionPane.showMessageDialog(this, "Game Over! Score: " + paddleBounceCount); // Show game over message
-            frame.dispose(); // Close the game window
-        }
-
-        repaint(); // Refresh the game state
     }
 
     // Change the method to public so it can be accessed externally
@@ -114,5 +129,9 @@ public class PingPongGame extends JPanel implements ActionListener {
         timer.stop();
         JOptionPane.showMessageDialog(this, "Game Ended! Score: " + paddleBounceCount); // Show end game message
         frame.dispose(); // Close the game window
+    }
+
+    public void pauseGame() {
+        togglePause(); // Toggle pause state
     }
 }

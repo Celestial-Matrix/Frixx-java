@@ -4,6 +4,8 @@ import java.lang.String;
 import java.awt.*;
 import java.net.*;
 import javax.swing.*;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.event.*;
 
 public class formal{
     Scanner in = new Scanner(System.in);
@@ -359,26 +361,64 @@ public class formal{
 
                 }else if(command.contains("game")||command.contains("gam")){
                     System.out.println("Sure! Here is a simple ping pong game.");
+                    
                     JFrame frame = new JFrame("Ping Pong Game");
                     PingPongGame game = new PingPongGame(frame);
 
-                    // Create the "End Game" button
+                    JButton pauseGameButton = new JButton("Pause");
                     JButton endGameButton = new JButton("End Game");
 
-                    // Make the button span the entire width of the window
-                    endGameButton.setPreferredSize(new Dimension(frame.getWidth(), 40)); // Set button height to 40
+                    // Set initial preferred size
+                    pauseGameButton.setPreferredSize(new Dimension(300, 40));
+                    endGameButton.setPreferredSize(new Dimension(250, 40)); // Slightly larger for equal distribution
 
-                    // Add action listener to end the game when button is clicked
+                    // Panel to hold the buttons
+                    JPanel buttonPanel = new JPanel(new BorderLayout());
+                    buttonPanel.add(pauseGameButton, BorderLayout.CENTER); // Only add Pause button initially
+
+                    // Define actions for each button
                     endGameButton.addActionListener(e -> game.endGame());
+                    pauseGameButton.addActionListener(e -> {
+                        game.pauseGame();
+                        boolean isPaused = buttonPanel.getComponentCount() > 1;
+
+                        // Toggle button display
+                        if (isPaused) {
+                            pauseGameButton.setText("Pause");
+                            pauseGameButton.setPreferredSize(new Dimension(550, 40)); // Full width
+                            buttonPanel.remove(endGameButton); // Remove End Game button
+                        } else {
+                            pauseGameButton.setText("Resume");
+                            pauseGameButton.setPreferredSize(new Dimension(350, 40)); // Smaller size
+                            endGameButton.setPreferredSize(new Dimension(300, 40)); // Slightly larger
+                            buttonPanel.add(endGameButton, BorderLayout.EAST); // Add End Game button
+                        }
+
+                        // Refresh the layout to apply button size and visibility changes
+                        frame.revalidate();
+                        frame.repaint();
+                    });
+
+                    frame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW)
+                            .put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "togglePause");
+                    frame.getRootPane().getActionMap().put("togglePause", new AbstractAction() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            pauseGameButton.doClick(); // Simulate a button click on Escape key press
+                        }
+                    });
 
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setSize(600, 500);
                     frame.setLayout(new BorderLayout());
                     frame.add(game, BorderLayout.CENTER); // Add the game panel to the center
-                    frame.add(endGameButton, BorderLayout.SOUTH); // Add the button directly to the bottom (spans full
-                                                                  // width)
+
+                    // Add the button panel to the bottom of the frame
+                    frame.add(buttonPanel, BorderLayout.SOUTH);
+
                     frame.setResizable(false); // Disable window maximizing
                     frame.setVisible(true);
+
                     System.out.println("The game is closed");
 
                 } else if (command.contains("informal")) {
