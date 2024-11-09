@@ -88,6 +88,7 @@ public class ChatbotWindow {
         frame.setVisible(true);
 
         // Set the window to be always on top
+        frame.setAlwaysOnTop(true);
         frame.setAlwaysOnTop(false);
 
         // Request focus on the input field
