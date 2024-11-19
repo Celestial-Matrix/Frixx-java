@@ -1,4 +1,4 @@
-
+package com.heavenly_matrix;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -24,7 +24,7 @@ public class ChatbotWindow {
         // Disable the maximize button by making the frame non-resizable
         frame.setResizable(false); // This disables the maximize button only
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("./media/Frix.jpg"));
+        ImageIcon icon = new ImageIcon(ChatbotWindow.class.getResource("/Frix.jpg"));
         frame.setIconImage(icon.getImage());
 
         chatArea = new JTextArea(20, 50);
@@ -84,7 +84,7 @@ public class ChatbotWindow {
         }, 0, 1000); // Update every second
 
         frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
         // Set the window to be always on top

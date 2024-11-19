@@ -1,41 +1,43 @@
-import game.*;
+package com.heavenly_matrix.mode;
 import java.util.*;
 import java.lang.String;
 import java.awt.*;
 import java.net.*;
 import javax.swing.*;
-import javax.swing.GroupLayout.Alignment;
+
+import com.heavenly_matrix.game.PingPongGame;
+import com.heavenly_matrix.tools.FileChooserHelper;
+import com.heavenly_matrix.tools.web;
+
 import java.awt.event.*;
 
-public class informal{
+public class formal{
     Scanner in = new Scanner(System.in);
-    
     private static String getSeparatorLine() {
-        return "______________________________________________________________________________"; // Adjust length as
-                                                                                                 // needed
+        return "______________________________________________________________________________"; // Adjust length as needed
     }
 
-    public void informal_c(String command, int count)
+    public void formal_c(String command, int count)
     {
         while (true){
             while (true) {
                 if (count == 0)
                     command = "hey";
-                else if(count == 2){
+                else if (count >= 2) {
                     System.out.println(getSeparatorLine());
                     System.out.println(getSeparatorLine());
                     command = in.nextLine();
                     command = command.toLowerCase();
                     System.out.println(getSeparatorLine());
                 }
-                
+                else if (count == -3) {
+                    System.out.println("Switched Formal Mode");
+                }
                 count = 2;
 
                 if (command.contains("hi") || command.contains("yo") || command.contains("heya") || command.contains("hello")) {
                     System.out.print("Yo! What's up man?");
-                } else if (command.contains("curse words")) {
-                    System.out.print("Dirty Boy cheee!!! ");
-                } else if (command.contains("friend") || command.contains("friends")) {
+                }else if (command.contains("friend") || command.contains("friends")) {
                     System.out.print("Friends r important; let\'s keep it positive.; ");
                 } else if (command.contains("i am fine") || command.contains("i am good") || command.contains("i am great") || command.contains("I\'m fine")) {
                     System.out.print("Great 2 hear that!; ");
@@ -47,10 +49,6 @@ public class informal{
                     System.out.print("I know how 2 assist with tasks & provide info.; ");
                 } else if (command.contains("aryan")) {
                     System.out.print("Smart person. AIRITO!; ");
-                } else if (command.contains("saras")) {
-                    System.out.print("Unknown entity. :(; ");
-                } else if (command.contains("vishvajeet")) {
-                    System.out.print("Bhak noobda, planted tree.; ");
                 } else if (command.contains("zohaib") || command.contains("rani zohaiba")) {
                     System.out.print("The best in the world!; ");
                 } else if (command.contains("good work")) {
@@ -85,16 +83,6 @@ public class informal{
                     System.out.print("No prob. What else can I do 4 u?; ");
                 } else if (command.contains("talk properly") || command.contains("talk in english")) {
                     System.out.print("Switching 2 English.; ");
-                } else if (command.contains("chindi")) {
-                    System.out.print("Ok, talking in Chindi: kya bidu kaisa re tu?; ");
-                }else if (command.contains("mai thik tu bata") || command.contains("tu kaisa hai")) {
-                    System.out.print("Bas life mast challe ri hai.; ");
-                } else if (command.contains("mai thik") || command.contains("bindaas") || command.contains("bindas")) {
-                    System.out.print("Sahi hai!; ");
-                } else if (command.contains("sahi hai")) {
-                    System.out.print("Aur kya?; ");
-                } else if (command.contains("aur bata")) {
-                    System.out.print("Bas sab thik hai.; ");
                 } else if (command.contains("haha") || command.contains("hehe") || command.contains("lol")) {
                     System.out.print("Glad 2 see u r in a good mood! Haha!; ");
                 } else if (command.contains("help") || command.contains("assist") || command.contains("support")) {
@@ -131,7 +119,7 @@ public class informal{
                 } else if (command.contains("what's your favorite sport") || command.contains("favorite sport")) {
                     System.out.print("I don\'t play sports, but I can help u find info on different sports.; ");
                 } else if (command.contains("tell me about yourself") || command.contains("about u")) {
-                    System.out.print("I\'m JARVIS, a virtual assistant created 2 help with various tasks and provide info.; ");
+                    System.out.print("I\'m Frix, a virtual assistant created 2 help with various tasks and provide info.; ");
                 } else if (command.contains("do u know any quotes") || command.contains("tell me a quote")) {
                     System.out.print("Here\'s a quote: 'The only limit 2 our realization of tomorrow is our doubts of today.' – Franklin D. Roosevelt; ");
                 } else if (command.contains("what r u up 2") || command.contains("what\'s up")) {
@@ -158,16 +146,14 @@ public class informal{
                     System.out.print("Practice regularly, use language apps, and engage in conversations.; ");
                 } else if (command.contains("can u recommend a movie") || command.contains("recommend a movie")) {
                     System.out.print("Sure! What genre r u interested in?; ");
-                } else if (command.contains("how do I reset my z_minatiword") || command.contains("reset z_minatiword")) {
-                    System.out.print("Visit the Z_minatiword reset page on the website and follow the instructions.; ");
                 } else if (command.contains("what\'s the best book 2 read") || command.contains("best book")) {
                     System.out.print("It depends on your interests. I can suggest books based on genres or authors.; ");
                 } else if (command.contains("how can I improve my skills") || command.contains("improve skills")) {
                     System.out.print("Practice, seek feedback, and stay updated with relevant resources.; ");
                 } else if (command.contains("what's a good hobby") || command.contains("suggest a hobby")) {
                     System.out.print("It depends on your interests. Some popular hobbies include reading, gardening, and coding.; ");
-                } else if (command.contains("how do I cook [dish]") || command.contains("recipe for [dish]")) {
-                    System.out.print("I can help with that. What dish r u trying 2 cook?; ");
+                } else if (command.contains("how do I cook ") || command.contains("recipe for ")) {
+                    System.out.print("Search the dish on the internet ");
                 } else if (command.contains("can u help with travel plans") || command.contains("travel plans")) {
                     System.out.print("Sure! Where r u planning 2 go?; ");
                 } else if (command.contains("what\'s a fun activity 2 do") || command.contains("fun activity")) {
@@ -366,7 +352,7 @@ public class informal{
                 } else if (command.isEmpty()) { // Check for empty command
                     System.out.print("How may I assist you?");
 
-                }else if (command.contains("none")) {
+                } else if (command.contains("none")) {
                     // If 'none' was set, it will break out of the while loop
                     break;
 
@@ -378,6 +364,8 @@ public class informal{
                     System.out.println("The result is" + random);
 
                 }else if(command.contains("game")||command.contains("gam")){
+                    System.out.println("Sure! Here is a simple ping pong game.");
+                    
                     JFrame frame = new JFrame("Ping Pong Game");
                     PingPongGame game = new PingPongGame(frame);
 
@@ -437,16 +425,20 @@ public class informal{
 
                     System.out.println("The game is closed");
 
-                } else if (command == "entered informal mode") {
-                    System.out.println("Switched to Informal mode");
+                } else if (command.contains("informal")) {
+                    String command_1 = "entered informal mode";
+                    int count_1 = -2;
+                    informal f = new informal();
+                    f.informal_c(command_1, count_1);
 
-                } else if (command.contains("formal")) {
-                    return;
+                    command = "escape";
+                    count = -3;
 
+                } else if (command == "escape") {
+                    
                 }
                 else {
                     System.out.print("I didn't get what you meant.");
-
                 }
 
                 System.out.println();

@@ -1,3 +1,4 @@
+package com.heavenly_matrix.tools;
 import java.net.URI;
 import java.util.*;
 import java.awt.*;
@@ -71,9 +72,7 @@ public class web {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                in.close();
-                
+              
             } else if (option == 2) {
                 break; // Exit the custom URL mode
             } else {

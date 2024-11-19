@@ -1,3 +1,4 @@
+package com.heavenly_matrix.game;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
