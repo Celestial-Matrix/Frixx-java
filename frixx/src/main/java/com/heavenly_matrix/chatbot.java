@@ -35,6 +35,9 @@ public class chatbot{
             else if(in_pass.equals(guest))
                 System.out.println("Welcome! Guest User, Nice 2 meat u!");
             System.out.println();
+            System.out.println("Hello, I am Frix, created by the founders of Heavenly Matrix, Airito(Aryan Agrawal) and Katakuri(Mr.Zohaib).");
+            System.out.println("In Partnership with Photon Studios");
+            System.out.println();
         }
         else {
             JOptionPane.showMessageDialog(null, "Wrong Password. Program will be terminated!", "Error", JOptionPane.ERROR_MESSAGE);
