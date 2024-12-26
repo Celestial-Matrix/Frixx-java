@@ -12,5 +12,6 @@
         "esbenp.prettier-vscode",
         "redhat.vscode-xml",
         "redhat.vscode-yaml"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
